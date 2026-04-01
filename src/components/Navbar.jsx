@@ -1,92 +1,113 @@
 // src/components/Navbar.jsx
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-900 text-white shadow-md">
-      <div className="container mx-auto flex justify-between items-center px-6 py-4">
-        {/* Logo */}
-        <div className="text-2xl font-bold">
-          <Link to="/">Hopelatdam Enterprises</Link>
-        </div>
-
-        {/* Hamburger button for mobile */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="focus:outline-none"
-          >
-            {isOpen ? (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                ></path>
-              </svg>
-            ) : (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            )}
-          </button>
-        </div>
-
-        {/* Links */}
-        <div
-          className={`${
-            isOpen ? "block" : "hidden"
-          } md:flex md:items-center md:space-x-6`}
+    <nav className="bg-green-700 flex justify-between items-center px-4 md:px-12 text-white shadow-md sticky top-0 z-50 w-full">
+      
+      {/* Main Container */}
+      <div className="flex justify-between items-center px-4 md:px-12">
+        
+        {/* LEFT: Logo */}
+        <Link
+          to="/"
+          className="text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap"
         >
-          <Link
+          HOPELATDAM ENTERPRISES
+        </Link>
+
+        {/* RIGHT: Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-10">
+          <NavLink
             to="/"
-            className="block mt-4 md:mt-0 hover:text-yellow-400"
-            onClick={() => setIsOpen(false)}
+            className={({ isActive }) =>
+              isActive
+                ? "text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1"
+                : "hover:text-yellow-300 transition"
+            }
           >
             Home
-          </Link>
-          <Link
+          </NavLink>
+
+          <NavLink
             to="/products"
-            className="block mt-4 md:mt-0 hover:text-yellow-400"
-            onClick={() => setIsOpen(false)}
+            className={({ isActive }) =>
+              isActive
+                ? "text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1"
+                : "hover:text-yellow-300 transition"
+            }
           >
             Products
-          </Link>
-          <Link
+          </NavLink>
+
+          <NavLink
             to="/about"
-            className="block mt-4 md:mt-0 hover:text-yellow-400"
-            onClick={() => setIsOpen(false)}
+            className={({ isActive }) =>
+              isActive
+                ? "text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1"
+                : "hover:text-yellow-300 transition"
+            }
           >
-            About Us
-          </Link>
-          <Link
+            About
+          </NavLink>
+
+          <NavLink
             to="/contact"
-            className="block mt-4 md:mt-0 hover:text-yellow-400"
-            onClick={() => setIsOpen(false)}
+            className={({ isActive }) =>
+              isActive
+                ? "text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1"
+                : "hover:text-yellow-300 transition"
+            }
           >
             Contact
-          </Link>
+          </NavLink>
+        </div>
+
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden bg-green-800 transition-all duration-300 overflow-hidden ${
+          isOpen ? "max-h-96 py-4" : "max-h-0"
+        }`}
+      >
+        <div className="flex text-4xl items-center space-x-8">
+          
+          <NavLink
+            to="/"
+            onClick={() => setIsOpen(false)}
+            className="hover:text-yellow-300"
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/products"
+            onClick={() => setIsOpen(false)}
+            className="hover:text-yellow-300"
+          >
+            Products
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            onClick={() => setIsOpen(false)}
+            className="hover:text-yellow-300"
+          >
+            About
+          </NavLink>
+
+          <NavLink
+            to="/contact"
+            onClick={() => setIsOpen(false)}
+            className="hover:text-yellow-300"
+          >
+            Contact
+          </NavLink>
         </div>
       </div>
     </nav>
