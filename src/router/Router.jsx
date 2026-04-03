@@ -3,8 +3,9 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Products from "../pages/Products";
-import About from "../pages/About";
-import Contact from "../pages/Contact";
+import AboutUs from "../pages/AboutUs";
+import ContactUs from "../pages/ContactUs";
+import ProductDetail from "../pages/ProductDetail";
 
 
 export default function AppRouter() {
@@ -13,8 +14,9 @@ export default function AppRouter() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/product/:productId" element={<ProductDetail />} />
       </Routes>
     </Router>
   );

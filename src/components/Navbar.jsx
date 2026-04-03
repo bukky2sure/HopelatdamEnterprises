@@ -1,23 +1,26 @@
 // src/components/Navbar.jsx
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-
+import logofood from "../assets/logofood.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-green-700 flex justify-between items-center px-4 md:px-12 text-white shadow-md sticky top-0 z-50 w-full">
-      
+    <nav className="bg-green-700 text-white shadow-md sticky top-0 z-50 w-full">
       {/* Main Container */}
-      <div className="flex justify-between items-center px-4 md:px-12">
+      <div className="container mx-auto flex justify-between items-center px-4 md:px-12 py-3">
         
         {/* LEFT: Logo */}
-        <Link
-          to="/"
-          className="text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap"
-        >
-          HOPELATDAM ENTERPRISES
+        <Link to="/" className="flex items-center">
+          <img
+            className="w-20 h-20 md:w-24 md:h-24 object-contain mr-4"
+            src={logofood}
+            alt="Hopelatdam Logo"
+          />
+          <span className="text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap">
+            HOPELATDAM ENTERPRISES
+          </span>
         </Link>
 
         {/* RIGHT: Desktop Menu */}
@@ -52,7 +55,7 @@ export default function Navbar() {
                 : "hover:text-yellow-300 transition"
             }
           >
-            About
+            About Us
           </NavLink>
 
           <NavLink
@@ -63,10 +66,17 @@ export default function Navbar() {
                 : "hover:text-yellow-300 transition"
             }
           >
-            Contact
+            Contact Us
           </NavLink>
         </div>
 
+        {/* MOBILE HAMBURGER BUTTON */}
+        <button
+          className="md:hidden focus:outline-none text-2xl"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? "✖" : "☰"}
+        </button>
       </div>
 
       {/* Mobile Menu */}
@@ -75,8 +85,7 @@ export default function Navbar() {
           isOpen ? "max-h-96 py-4" : "max-h-0"
         }`}
       >
-        <div className="flex text-4xl items-center space-x-8">
-          
+        <div className="flex flex-col items-center space-y-4 text-lg">
           <NavLink
             to="/"
             onClick={() => setIsOpen(false)}
@@ -98,7 +107,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             className="hover:text-yellow-300"
           >
-            About
+            AboutUs
           </NavLink>
 
           <NavLink
@@ -106,7 +115,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             className="hover:text-yellow-300"
           >
-            Contact
+            ContactUs
           </NavLink>
         </div>
       </div>
