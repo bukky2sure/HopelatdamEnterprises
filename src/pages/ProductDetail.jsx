@@ -7,39 +7,52 @@ const ProductDetail = () => {
   const location = useLocation();
   const product = location.state?.product;
 
-  // State to track which image is currently displayed
-  const [mainImage, setMainImage] = useState(
-    product?.images && product.images.length > 0 ? product.images[0] : product?.image
-  );
+  // Handle initial image safely
+  const initialImage =
+    product?.images && product.images.length > 0
+      ? product.images[0]
+      : product?.image;
+
+  const [mainImage, setMainImage] = useState(initialImage);
 
   if (!product) {
     return (
       <Layout>
-        <div className="text-center p-10 text-red-500">Product not found</div>
+        <div className="flex items-center justify-center min-h-[60vh] text-red-500 text-lg">
+          Product not found
+        </div>
       </Layout>
     );
   }
 
   return (
     <Layout>
-      <div className="container mx-auto p-6">
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Left: Image Gallery */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 md:py-12">
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          
+          {/* Left: Image Section */}
           <div>
-            <img
-              src={mainImage}
-              alt={product.title}
-              className="w-full h-[500px] object-cover rounded-lg shadow-md mb-4"
-            />
+            <div className="w-full h-64 sm:h-80 md:h-[450px] lg:h-[500px] overflow-hidden rounded-lg shadow-md">
+              <img
+                src={mainImage}
+                alt={product.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Thumbnails */}
             {product.images && product.images.length > 1 && (
-              <div className="flex gap-2">
+              <div className="flex gap-2 mt-4 overflow-x-auto">
                 {product.images.map((img, idx) => (
                   <img
                     key={idx}
                     src={img}
                     alt={`${product.title}-${idx}`}
-                    className={`w-20 h-20 object-cover rounded-lg cursor-pointer border ${
-                      mainImage === img ? "border-green-600" : "border-gray-300"
+                    className={`w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-md cursor-pointer border flex-shrink-0 ${
+                      mainImage === img
+                        ? "border-green-600"
+                        : "border-gray-300"
                     }`}
                     onClick={() => setMainImage(img)}
                   />
@@ -49,17 +62,27 @@ const ProductDetail = () => {
           </div>
 
           {/* Right: Product Info */}
-          <div>
-            <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
-            <p className="text-gray-600 mb-2">Price: ₦{product.price}</p>
-            <p className="text-gray-700 mb-6">
-              {product.description ||
-                "This is a high-quality product. You can add description here."}
+          <div className="flex flex-col justify-center">
+            
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
+              {product.title}
+            </h1>
+
+            <p className="text-green-700 text-lg sm:text-xl font-semibold mb-3">
+              ₦{product.price}
             </p>
-            <button className="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition">
+
+            <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-6">
+              {product.description ||
+                "This is a high-quality product sourced from trusted suppliers. Perfect for both personal use and business needs."}
+            </p>
+
+            <button className="w-full sm:w-fit bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition duration-300">
               Add to Cart
             </button>
+
           </div>
+
         </div>
       </div>
     </Layout>

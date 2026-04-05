@@ -1,3 +1,4 @@
+// src/pages/Products.jsx
 import React from "react";
 import Layout from "../components/Layout";
 import ProductCard from "../components/ProductCard";
@@ -23,15 +24,13 @@ import items31 from "../assets/items31.jpg";
 import items35 from "../assets/items35.jpg";
 import items40 from "../assets/items40.webp";
 import items39 from "../assets/items39.webp";
+import yams from "../assets/yams.jpg";
+import beans from "../assets/Beans.jpg";
+import ijebu from "../assets/Ijebu.jpg";
 
 const productsData = [
-  {
-    id: 1,
-    title: "Honeywell Whole Wheat Meal 2kg",
-    image: honey1,
-    price: 1300,
-  },
-  { id: 2, title: "Golden Penny Semovita", image: items9, price: 1950 },
+  { id: 1, title: "Honeywell Whole Wheat Meal 2kg", image: honey1, price: 1300 },
+  { id: 2, title: "Golden Penny Semovita 1kg", image: items9, price: 1950 },
   { id: 3, title: "Golden Penny Pasta", image: items10, price: 1000 },
   {
     id: 4,
@@ -75,22 +74,29 @@ const productsData = [
   },
   { id: 19, title: "Dangote Pasta", image: items29, price: 420 },
   { id: 20, title: "Ayoola Plantain Flour", image: items40, price: 2000 },
-  { id: 39, title: "Ayoola Brown Beans 1.8kg", image: items39, price: 2045 },
+  { id: 21, title: "Ayoola Brown Beans 1.8kg", image: items39, price: 2045 },
+  {id: 22, title: "Yams", image: yams, price: 5000},
+  {id: 23, title: "Beans", image: beans, price: 4000},
+  {id: 24, title: "Ijebu Garri", image: ijebu, price: 2500},
 ];
 
 export default function Products() {
   return (
     <Layout>
-      <div className="container mx-auto p-6">
-        <h1 className="text-3xl font-bold mb-6 text-green-700 text-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 md:py-12">
+        
+        {/* Title */}
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-green-700 text-center">
           All Products
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {/* Product Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {productsData.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
+
       </div>
     </Layout>
   );

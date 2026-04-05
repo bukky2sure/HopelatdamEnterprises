@@ -6,73 +6,52 @@ import logofood from "../assets/logofood.png";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navLinkClass = ({ isActive }) =>
+    isActive
+      ? "text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1"
+      : "hover:text-yellow-300 transition";
+
   return (
     <nav className="bg-green-700 text-white shadow-md sticky top-0 z-50 w-full">
+      
       {/* Main Container */}
-      <div className="container mx-auto flex justify-between items-center px-4 md:px-12 py-3">
+      <div className="container mx-auto flex justify-between items-center px-4 md:px-10 py-3">
         
-        {/* LEFT: Logo */}
-        <Link to="/" className="flex items-center">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2 sm:gap-3">
           <img
-            className="w-20 h-20 md:w-24 md:h-24 object-contain mr-4"
+            className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain"
             src={logofood}
             alt="Hopelatdam Logo"
           />
-          <span className="text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap">
-            HOPELATDAM ENTERPRISES
+          <span className="text-sm sm:text-lg md:text-xl font-bold leading-tight">
+            HOPELATDAM <br className="sm:hidden" />
+            <span className="hidden sm:inline">ENTERPRISES</span>
           </span>
         </Link>
 
-        {/* RIGHT: Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-10">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive
-                ? "text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1"
-                : "hover:text-yellow-300 transition"
-            }
-          >
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-8 lg:space-x-10 text-base">
+          <NavLink to="/" className={navLinkClass}>
             Home
           </NavLink>
 
-          <NavLink
-            to="/products"
-            className={({ isActive }) =>
-              isActive
-                ? "text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1"
-                : "hover:text-yellow-300 transition"
-            }
-          >
+          <NavLink to="/products" className={navLinkClass}>
             Products
           </NavLink>
 
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive
-                ? "text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1"
-                : "hover:text-yellow-300 transition"
-            }
-          >
+          <NavLink to="/about" className={navLinkClass}>
             About Us
           </NavLink>
 
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              isActive
-                ? "text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1"
-                : "hover:text-yellow-300 transition"
-            }
-          >
+          <NavLink to="/contact" className={navLinkClass}>
             Contact Us
           </NavLink>
         </div>
 
-        {/* MOBILE HAMBURGER BUTTON */}
+        {/* Mobile Button */}
         <button
-          className="md:hidden focus:outline-none text-2xl"
+          className="md:hidden text-2xl focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? "✖" : "☰"}
@@ -86,10 +65,15 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col items-center space-y-4 text-lg">
+          
           <NavLink
             to="/"
             onClick={() => setIsOpen(false)}
-            className="hover:text-yellow-300"
+            className={({ isActive }) =>
+              isActive
+                ? "text-yellow-400 font-semibold"
+                : "hover:text-yellow-300"
+            }
           >
             Home
           </NavLink>
@@ -97,7 +81,11 @@ export default function Navbar() {
           <NavLink
             to="/products"
             onClick={() => setIsOpen(false)}
-            className="hover:text-yellow-300"
+            className={({ isActive }) =>
+              isActive
+                ? "text-yellow-400 font-semibold"
+                : "hover:text-yellow-300"
+            }
           >
             Products
           </NavLink>
@@ -105,18 +93,27 @@ export default function Navbar() {
           <NavLink
             to="/about"
             onClick={() => setIsOpen(false)}
-            className="hover:text-yellow-300"
+            className={({ isActive }) =>
+              isActive
+                ? "text-yellow-400 font-semibold"
+                : "hover:text-yellow-300"
+            }
           >
-            AboutUs
+            About Us
           </NavLink>
 
           <NavLink
             to="/contact"
             onClick={() => setIsOpen(false)}
-            className="hover:text-yellow-300"
+            className={({ isActive }) =>
+              isActive
+                ? "text-yellow-400 font-semibold"
+                : "hover:text-yellow-300"
+            }
           >
-            ContactUs
+            Contact Us
           </NavLink>
+
         </div>
       </div>
     </nav>
