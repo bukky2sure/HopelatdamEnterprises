@@ -20,7 +20,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 sm:gap-3">
           <img
-            className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain"
+            className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 object-contain"
             src={logofood}
             alt="Hopelatdam Logo"
           />
