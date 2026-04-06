@@ -25,7 +25,7 @@ export default function Header() {
               {/* Email */}
               <div className="flex items-center justify-center sm:justify-start space-x-2">
                 <FaEnvelope className="text-yellow-400 text-base sm:text-lg" />
-                <span className="break-all">info@hopelatdam.com</span>
+                <span className="break-all">hopelatdam@gmail.com</span>
               </div>
 
               {/* Phone */}
@@ -34,7 +34,7 @@ export default function Header() {
                 className="flex items-center justify-center sm:justify-start space-x-2 mt-1 sm:mt-0"
               >
                 <FaPhone className="text-yellow-400 text-base sm:text-lg" />
-                <span>+234 (0) 902 810 6224</span>
+                <span>+234 (0)08165637597, +234 (0)08165636735 </span>
               </a>
             </div>
 
