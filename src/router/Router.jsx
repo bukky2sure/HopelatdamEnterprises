@@ -1,16 +1,14 @@
-
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Products from "../pages/Products";
 import AboutUs from "../pages/AboutUs";
 import ContactUs from "../pages/ContactUs";
 import ProductDetail from "../pages/ProductDetail";
 
-
 export default function Router() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
@@ -18,6 +16,6 @@ export default function Router() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/product/:productId" element={<ProductDetail />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
