@@ -8,7 +8,7 @@ import ContactUs from "../pages/ContactUs";
 import ProductDetail from "../pages/ProductDetail";
 
 
-export default function AppRouter() {
+export default function Router() {
   return (
     <Router>
       <Routes>
