@@ -22,7 +22,7 @@ import items30 from "../assets/items30.png";
 import items31 from "../assets/items31.jpg";
 import items35 from "../assets/items35.jpg";
 import mamagold from "../assets/mamagold.jpg";
-import honey1 from "../assets/honey1.jpg";
+import honey from "../assets/honey.jpg";
 import food2 from "../assets/food2.jpg";
 import items6 from "../assets/items6.jpg";
 import items1 from "../assets/items1.jpg";
@@ -35,7 +35,7 @@ export default function Home() {
   const galleryImages = [
     items9, items10, items11, items13, items15, items16,
     items17, items18, items19, items24, items23, items27,
-    items30, items31, items35, mamagold, honey1, food2,
+    items30, items31, items35, mamagold, honey, food2,
     items36, items28, items6, items1, items40, items39,
   ];
 

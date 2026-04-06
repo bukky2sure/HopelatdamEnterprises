@@ -3,7 +3,7 @@ import React from "react";
 import Layout from "../components/Layout";
 import ProductCard from "../components/ProductCard";
 
-import honey1 from "../assets/honey1.jpg";
+import honey from "../assets/honey.jpg";
 import items9 from "../assets/items9.jpg";
 import items10 from "../assets/items10.jpg";
 import items11 from "../assets/items11.jpg";
@@ -29,7 +29,7 @@ import beans from "../assets/Beans.jpg";
 import ijebu from "../assets/Ijebu.jpg";
 
 const productsData = [
-  { id: 1, title: "Honeywell Whole Wheat Meal 2kg", image: honey1, price: 1300 },
+  { id: 1, title: "Honeywell Whole Wheat Meal 2kg", image: honey, price: 1300 },
   { id: 2, title: "Golden Penny Semovita 1kg", image: items9, price: 1950 },
   { id: 3, title: "Golden Penny Pasta", image: items10, price: 1000 },
   {
