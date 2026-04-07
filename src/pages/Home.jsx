@@ -2,6 +2,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import * as assets from "../assets"; // import all assets at once
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const galleryImages = [
@@ -77,7 +78,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Ready to Order?</h2>
           <p className="mb-6 text-sm sm:text-base md:text-xl">Contact us today and secure the best wholesale deals.</p>
-          <a href="/contact" className="inline-block bg-yellow-400 text-green-900 font-bold px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-yellow-300 transition">Contact Us</a>
+          <Link
+          to="/contact"
+          className="bg-yellow-400 text-green-900 px-6 py-3 rounded-full font-bold hover:bg-yellow-300"
+        >
+          Contact Us
+        </Link>
         </div>
       </section>
 
