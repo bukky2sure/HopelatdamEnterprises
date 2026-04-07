@@ -6,15 +6,17 @@ import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="bg-yellow-500 text-white">
-      <div className="container mx-auto px-4 py-10">
-        
+      <div className="max-w-7xl mx-auto px-4 py-12">
+
         {/* Main Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center sm:text-left">
-          
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-center sm:text-left">
+
           {/* About Us */}
           <div>
-            <h2 className="text-lg font-bold mb-3">About Us</h2>
-            <p className="text-sm leading-relaxed">
+            <h2 className="text-xl sm:text-xl md:text-2xl font-extrabold mb-4">
+              About Us
+            </h2>
+            <p className="text-base sm:text-sm md:text-base leading-relaxed font-medium">
               HOPELATDAM ENTERPRISES is a trusted wholesale distributor of top
               food brands including Golden Penny, Honeywell, Mama Gold, Ayo Ola
               Foods, and Dangote. Our mission is to provide high-quality food
@@ -25,8 +27,10 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h2 className="text-lg font-bold mb-3">Quick Links</h2>
-            <ul className="space-y-2 text-sm">
+            <h2 className="text-xl sm:text-xl md:text-2xl font-extrabold mb-4">
+              Quick Links
+            </h2>
+            <ul className="space-y-3 text-base sm:text-sm md:text-base font-semibold">
               <li>
                 <NavLink to="/" className="hover:underline">
                   Home
@@ -52,29 +56,40 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h2 className="text-lg font-bold mb-3">Contact Us</h2>
-            <div className="text-sm space-y-2">
-              <p>Email: hopelatdam@gmail.com</p>
+            <h2 className="text-xl sm:text-xl md:text-2xl font-extrabold mb-4">
+              Contact Us
+            </h2>
+
+            <div className="text-base sm:text-sm md:text-base space-y-3 font-medium">
+              <p><strong>Email:</strong> hopelatdam@gmail.com</p>
+
               <p>
-                Phone: +234 8165637597 <br />
+                <strong>Phone:</strong><br />
+                +234 8165637597 <br />
                 +234 8165636735
               </p>
+
               <p>
-                Head Office: Km 857, Abeokuta Express Way, Kollington B/Stop,
-                Lagos. <br />
-                Branch: 55, Old Ota Road, Irepodun Junction.
+                <strong>Head Office:</strong><br />
+                Km 857, Abeokuta Express Way, Kollington B/Stop, Lagos.
+              </p>
+
+              <p>
+                <strong>Branch:</strong><br />
+                55, Old Ota Road, Irepodun Junction.
               </p>
             </div>
 
             {/* Social Icons */}
-            <div className="flex justify-center sm:justify-start space-x-4 mt-4">
+            <div className="flex justify-center sm:justify-start gap-5 mt-6 text-2xl">
+              
               <a
                 href="https://facebook.com/hopelatdam"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-600 transition"
               >
-                <FaFacebook size={22} />
+                <FaFacebook />
               </a>
 
               <a
@@ -83,7 +98,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="hover:text-pink-500 transition"
               >
-                <FaInstagram size={22} />
+                <FaInstagram />
               </a>
 
               <a
@@ -92,7 +107,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="hover:text-blue-400 transition"
               >
-                <FaTwitter size={22} />
+                <FaTwitter />
               </a>
 
               <a
@@ -101,16 +116,18 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="hover:text-green-500 transition"
               >
-                <FaWhatsapp size={22} />
+                <FaWhatsapp />
               </a>
             </div>
+
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/30 mt-8 pt-4 text-center text-sm">
+        <div className="border-t border-white/30 mt-10 pt-5 text-center text-base sm:text-sm md:text-base font-medium">
           <p>&copy; 2026 HOPELATDAM ENTERPRISES. All rights reserved.</p>
         </div>
+
       </div>
     </footer>
   );
