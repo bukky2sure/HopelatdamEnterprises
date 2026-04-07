@@ -8,30 +8,30 @@ export default function Navbar() {
 
   const navLinkClass = ({ isActive }) =>
     isActive
-      ? "text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1"
-      : "hover:text-yellow-300 transition";
+      ? "text-yellow-400 font-bold border-b-2 border-yellow-400 pb-1"
+      : "hover:text-yellow-300 transition font-semibold";
 
   return (
     <nav className="bg-green-700 text-white shadow-md sticky top-0 z-50 w-full">
-      
+
       {/* Main Container */}
-      <div className="container mx-auto flex justify-between items-center px-4 md:px-10 py-3">
-        
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-10 py-4">
+
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 sm:gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <img
-            className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 object-contain"
+            className="w-20 h-20 sm:w-20 sm:h-20 md:w-20 md:h-20 object-contain"
             src={logofood}
             alt="Hopelatdam Logo"
           />
-          <span className="text-sm sm:text-lg md:text-xl font-bold leading-tight">
+          <span className="text-lg sm:text-lg md:text-xl font-extrabold leading-tight">
             HOPELATDAM <br className="sm:hidden" />
             <span className="hidden sm:inline">ENTERPRISES</span>
           </span>
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8 lg:space-x-10 text-base">
+        <div className="hidden md:flex items-center space-x-8 lg:space-x-10 text-lg font-semibold">
           <NavLink to="/" className={navLinkClass}>
             Home
           </NavLink>
@@ -51,7 +51,7 @@ export default function Navbar() {
 
         {/* Mobile Button */}
         <button
-          className="md:hidden text-2xl focus:outline-none"
+          className="md:hidden text-3xl font-bold focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? "✖" : "☰"}
@@ -61,17 +61,17 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         className={`md:hidden bg-green-800 transition-all duration-300 overflow-hidden ${
-          isOpen ? "max-h-96 py-4" : "max-h-0"
+          isOpen ? "max-h-96 py-6" : "max-h-0"
         }`}
       >
-        <div className="flex flex-col items-center space-y-4 text-lg">
-          
+        <div className="flex flex-col items-center space-y-6 text-xl font-bold">
+
           <NavLink
             to="/"
             onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
               isActive
-                ? "text-yellow-400 font-semibold"
+                ? "text-yellow-400"
                 : "hover:text-yellow-300"
             }
           >
@@ -83,7 +83,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
               isActive
-                ? "text-yellow-400 font-semibold"
+                ? "text-yellow-400"
                 : "hover:text-yellow-300"
             }
           >
@@ -95,7 +95,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
               isActive
-                ? "text-yellow-400 font-semibold"
+                ? "text-yellow-400"
                 : "hover:text-yellow-300"
             }
           >
@@ -107,7 +107,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
               isActive
-                ? "text-yellow-400 font-semibold"
+                ? "text-yellow-400"
                 : "hover:text-yellow-300"
             }
           >
@@ -116,6 +116,7 @@ export default function Navbar() {
 
         </div>
       </div>
+
     </nav>
   );
 }
