@@ -1,83 +1,39 @@
 // src/components/Header.jsx
 import React from "react";
-import {
-  FaEnvelope,
-  FaPhone,
-  FaLinkedin,
-  FaInstagram,
-  FaFacebook,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaEnvelope, FaPhone } from "react-icons/fa";
 
 export default function Header() {
   return (
     <header className="w-full shadow">
-
       {/* Top Contact Bar */}
       <div className="bg-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 py-3">
 
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
+          {/* FLEX CONTAINER */}
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
 
-            {/* Contact Info */}
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:space-x-6 text-center sm:text-left">
-              
-              {/* Email */}
-              <div className="flex items-center justify-center sm:justify-start space-x-2">
-                <FaEnvelope className="text-yellow-400 text-lg sm:text-xl md:text-2xl" />
-                <span className="text-base sm:text-sm md:text-base font-semibold break-all">
-                  hopelatdam@gmail.com
-                </span>
-              </div>
-
-              {/* Phone */}
-              <a
-                href="tel:+2349028106224"
-                className="flex items-center justify-center sm:justify-start space-x-2"
-              >
-                <FaPhone className="text-yellow-400 text-lg sm:text-xl md:text-2xl" />
-                <span className="text-base sm:text-sm md:text-base font-semibold">
-                  +234 08165637597, 08165636735
-                </span>
-              </a>
+            {/* LEFT - Email */}
+            <div className="flex items-center space-x-2 text-center sm:text-left">
+              <FaEnvelope className="text-yellow-400 text-lg sm:text-xl md:text-2xl" />
+              <span className="text-base sm:text-sm md:text-base font-semibold break-all">
+                hopelatdam@gmail.com
+              </span>
             </div>
 
-            {/* Social Icons */}
-            <div className="flex justify-center sm:justify-end items-center gap-5 text-xl sm:text-lg md:text-xl">
-              
-              <a href="#" className="hover:text-yellow-400 transition duration-300">
-                <FaLinkedin />
-              </a>
-
-              <a href="#" className="hover:text-yellow-400 transition duration-300">
-                <FaInstagram />
-              </a>
-
-              <a href="#" className="hover:text-yellow-400 transition duration-300">
-                <FaFacebook />
-              </a>
-
-              <a
-                href="https://api.whatsapp.com/send?text=Hello%20Hopelatdam&phone=2349028106224"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-yellow-400 transition duration-300"
-              >
-                <FaWhatsapp />
-              </a>
-
-              <a
-                href="tel:+2349028106224"
-                className="hover:text-yellow-400 transition duration-300"
-              >
-                <FaPhone />
-              </a>
-            </div>
+            {/* RIGHT - Phone */}
+            <a
+              href="tel:+2349028106224"
+              className="flex items-center space-x-2 text-center sm:text-right"
+            >
+              <FaPhone className="text-yellow-400 text-lg sm:text-xl md:text-2xl" />
+              <span className="text-base sm:text-sm md:text-base font-semibold">
+                +234 08165637597, +234 08165636735
+              </span>
+            </a>
 
           </div>
         </div>
       </div>
-
     </header>
   );
 }

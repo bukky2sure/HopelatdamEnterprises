@@ -17,16 +17,15 @@ export default function Navbar() {
       {/* Main Container */}
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-10 py-4">
 
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3">
+        {/* Logo + Name (STACKED) */}
+        <Link to="/" className="flex flex-col items-center text-center">
           <img
-            className="w-20 h-20 sm:w-20 sm:h-20 md:w-20 md:h-20 object-contain"
+            className="w-20 h-20 object-contain"
             src={logofood}
             alt="Hopelatdam Logo"
           />
-          <span className="text-lg sm:text-lg md:text-xl font-extrabold leading-tight">
-            HOPELATDAM <br className="sm:hidden" />
-            <span className="hidden sm:inline">ENTERPRISES</span>
+          <span className="text-sm sm:text-base md:text-lg font-semibold leading-tight mt-1">
+            HOPELATDAM ENTERPRISES
           </span>
         </Link>
 
@@ -70,9 +69,7 @@ export default function Navbar() {
             to="/"
             onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
-              isActive
-                ? "text-yellow-400"
-                : "hover:text-yellow-300"
+              isActive ? "text-yellow-400" : "hover:text-yellow-300"
             }
           >
             Home
@@ -82,9 +79,7 @@ export default function Navbar() {
             to="/products"
             onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
-              isActive
-                ? "text-yellow-400"
-                : "hover:text-yellow-300"
+              isActive ? "text-yellow-400" : "hover:text-yellow-300"
             }
           >
             Products
@@ -94,9 +89,7 @@ export default function Navbar() {
             to="/about"
             onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
-              isActive
-                ? "text-yellow-400"
-                : "hover:text-yellow-300"
+              isActive ? "text-yellow-400" : "hover:text-yellow-300"
             }
           >
             About Us
@@ -106,9 +99,7 @@ export default function Navbar() {
             to="/contact"
             onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
-              isActive
-                ? "text-yellow-400"
-                : "hover:text-yellow-300"
+              isActive ? "text-yellow-400" : "hover:text-yellow-300"
             }
           >
             Contact Us
